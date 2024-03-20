@@ -1,4 +1,18 @@
 /* 將連結的顏色設置為藍色 */
-li a {
+body li a {
     color: blue;
+}
+h1 {
+    margin-top:-5px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    line-height:150px;
+    text-align: center;
+    font-size: 80px; /* 调整字体大小 */
+    background-color: rgb(207, 142, 63);
+}
+h2 {
+    text-align: right;
+    margin-top: 0px;
+    font-size:30px;
 }
