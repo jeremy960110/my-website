@@ -4,17 +4,15 @@ body li a {
 }
 h1 {
     margin-top: -10px;
-    margin-left: -10px;
-    margin-right: -20px;
+    margin-left:-10px;
+    margin-right:-20px;
     margin-bottom: 0px;
     padding-bottom: 0px;
     line-height: 150px;
     text-align: center;
     font-size: 80px;
-    background-color: #000000; /* Black background */
-    color: #ffffff; /* White text */
+    background-color: #81ecec;
 }
-
 h2 {
     text-align: right;
     margin-top: 0px;
