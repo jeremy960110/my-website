@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="./datafrom.css">
 </head>
 <body>
+    <h2>題解</h2>
+    <p>跟基地台那題類似，都具有單調性，也就是說，<b style="font-weight: 900;"><u>若某高度x可以貼,那x以下也一定可以貼，若某高度x不能貼,那x以上也一定不能貼</u></b>，如果找出x可以貼,x+1不能貼,那x一定就是最佳解。
+        而難的地方是如何知道當前高度是否可以貼，首先需要把p(廣告長度)reverse，以便之後p2做pop時可以提高效率，接著在函示past裡宣告一個p2 = p.copy()，之後pop就不會引響到原來的p了，然後用迴圈跟一些if-else，就可以求出是否貼得上。</p>
     <script src="https://gist.github.com/jeremy960110/54eb0f43298b7dcd97827c6d631bc950.js"></script>
     <img src="./牆上海報.jpg">
     <a href="../index.html"><button id="s">回上ㄧ頁</button></a>

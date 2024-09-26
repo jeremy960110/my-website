@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="./datafrom.css">
 </head>
 <body>
+    <h2>題解</h2>
+    <p>最糟情況有可能n!種情況都要算完，所以先不考慮，而這題應該是我用第六感<s>數感</s>解出來的。
+        直觀上來說，如果要減少能量消耗，必須讓越重的物品在下面，而兩個物品比較是依W跟F相乘的結果—>WA*FB 和WB*FA，在數學上又可以得出 WA/FA 和 WB /FB ，所以就可以用sort(key=lambda)做排序，W/F值較大者會在data右方(下面)，較小者則在data左方(上面)，這樣就可以由左到右去累加重量並且計算總能量消耗了。</p>
     <script src="https://gist.github.com/jeremy960110/2af8c2d053910fc5f594d206bf2e9c7d.js"></script>
     <img src="./物品堆疊.jpg">
     <a href="../index.html"><button id="s">回上ㄧ頁</button></a>

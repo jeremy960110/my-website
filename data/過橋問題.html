@@ -5,6 +5,11 @@
     <link rel="stylesheet" href="./datafrom.css">
 </head>
 <body>
+    <h2>題解</h2>
+    <p>先把人依速度做排序，如果只有兩人以下就是選最大的，而三個人(a,b,c)呢？那就是c(c跟a一起)+a(a跑回來)+b(b跟a一起)。但四個以上就有點複雜了，這裡舉四個人的例子(a,b,y,z)可以把a,b當成運輸手電筒的人，y,z為最慢的人，如果四人以上，先把y,z運走，以產生新的y,z，直到小於三個人，換句話說，每次把最慢的兩個人運送到對面。</p>
+    <p>方法1：az過，a回來接y過去，a再回來。共耗z+a+y+a</p>
+    <p>方法2：ab過，a回來，yz過，b回來。共耗b+a+z+b</p>
+    <p>每一輪所需時間就是min(z+a+y+a,b+a+z+b)，並且把最後兩項pop，直到len(data)<4。</p>
     <script src="https://gist.github.com/jeremy960110/6d23c4930033008cf511ef466c92310f.js"></script>
     <img src="./過橋問題.jpg">
     <a href="../index.html"><button id="s">回上ㄧ頁</button></a>

@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="./datafrom.css">
 </head>
 <body>
+    <h2>題解</h2>
+    <p>可以定義一個p去紀錄頭跟尾還有每次切割的點，這樣每次切割後的花費就是p[x+1]-p[x-1]，然後用bisect快速找出放入p的適當位置，最後把這些花費計算出來就是答案了</p>
     <script src="https://gist.github.com/jeremy960110/fc1776147ac7e83ee464ee5b189e43bc.js"></script>
     <img src="./切割費用.jpg">
     <a href="../index.html"><button id="s">回上ㄧ頁</button></a>

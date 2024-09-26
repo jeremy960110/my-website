@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="./datafrom.css">
 </head>
 <body>
+    <h2>題解</h2>
+    <p>題目有說飛黃只會往右方、上方、右上方移動，所以先把data按照X跟Y的大小做排序，然後把Y的部分取出，代替原本的data，雖然裡面的Y有可能值是一樣的，但所對應到的X不可能相同，因為題目有說：「 x 座標跟 y 座標都不比原本小」，同理，換成取出X也是一樣的道理，而這樣就可以知道Y非嚴格遞增，所以新的data是NLDS(非嚴格遞增子序列)，詳情請看程式碼。</p>
     <script src="https://gist.github.com/jeremy960110/de47f121e2019cc277a85bebc7abc1eb.js"></script>
     <img src="./飛黃騰達.jpg">
     <a href="../index.html"><button id="s">回上ㄧ頁</button></a>

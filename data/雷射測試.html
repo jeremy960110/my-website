@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="./datafrom.css"> 
 </head>
 <body>
+    <h2>題解</h2>
+    <p>因為雷射光是直線前進的，所以每個x座標相同的點都以y排序，每個y座標相同的點都以x排序。這樣就可以很快以二分搜找到某點的相鄰點(上下左右)，而mirX[i]是記錄所有x值為i的鏡子資料，而mirXy[i]是記錄所有x=i的鏡子的y值，且有照大小排序；mirY跟mirYx則相反。</p>
     <script src="https://gist.github.com/jeremy960110/ebfda5355c6ef8f0a61159f30b59dd2d.js"></script>
     <img src="./雷射測試.jpg">
     <a href="../index.html"><button id="s">回上ㄧ頁</button></a>

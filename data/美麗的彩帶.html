@@ -5,6 +5,11 @@
     <link rel="stylesheet" href="./datafrom.css"> 
 </head>
 <body>
+    <h2>題解</h2>
+    <p>1.window是紀錄子區間的2D結構如果子區間為[1,3,2,3]，則window=[[1,1], [3,2], [2,1]]而前面有說bisect無法接受2D-array，所以要新增名為win0( [x[0] for x in window] )的list去紀錄目前子區間的集合。</p>
+    <p>2.每多一個點，就在win0找看看有沒有，沒有就insort(window跟win0都要)，有就window[idx][1]+=1。</p>
+    <p>3.每少一個點，就在window找這個點，並且window[idx][1]-=1，如果變成0，就pop(window跟win0都要)。</p>
+    <p>4.len(window)如果等於m，美麗度+1。</p>
     <script src="https://gist.github.com/jeremy960110/03e997beb46213c46d2f7faa619db39e.js"></script>
     <img src="./美麗的彩帶.jpg">
     <a href="../index.html"><button id="s">回上ㄧ頁</button></a>

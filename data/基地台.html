@@ -5,6 +5,10 @@
     <link rel="stylesheet" href="./datafrom.css"> 
 </head>
 <body>
+    <h2>題解</h2>
+    <p>剛開始看到題目根本沒有想到會用到二分搜尋，但在紙上模擬後，就發現了規律。</p>
+    <p>1.假如R=n，那n+1也一定可以覆蓋全部的基地台，而n-1則不一定。</p>
+    <p>2.承1，發現了二分搜的規律，這樣就需要去寫一個函示去實現，如果m無法覆蓋全部，L = m+1，否則，R = m(不能m-1，因為有可能此時的m剛好是最小覆蓋半徑)。</p>
     <script src="https://gist.github.com/jeremy960110/235eec9f3f652e28ec80de0953d04d24.js"></script>
     <img src="./基地台.jpg">
     <a href="../index.html"><button id="s">回上ㄧ頁</button></a>

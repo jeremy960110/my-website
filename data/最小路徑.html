@@ -5,6 +5,11 @@
     <link rel="stylesheet" href="./datafrom.css">
 </head>
 <body>
+    <h2>題解</h2>
+    <p>因為只能往右跟下走，代表除了左邊界跟上邊界以外的地方都是由左方或上方來的。</p>
+    <p>左邊界：M[i][0] = M[i-1][0] + data[i][0]</p>
+    <p>上邊界：M[0][j] = M[0][j-1] + data[0][j]</p>
+    <p>其他  ：  M[i][j] = min(M[i-1][j], M[i][j-1])+data[i][j]</p>
     <script src="https://gist.github.com/jeremy960110/77f3eb20210b71c7fbff03886ee15c16.js"></script>
     <img src="./最小路徑.jpg">
     <a href="../index.html"><button id="s">回上ㄧ頁</button></a>

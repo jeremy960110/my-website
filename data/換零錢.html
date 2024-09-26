@@ -5,6 +5,15 @@
     <link rel="stylesheet" href="./datafrom.css"> 
 </head>
 <body>
+    <h2>題解</h2>
+    <p>這種題目如果幣值是可以連續整除的話，可以用Greedy，否則，就只能用DP，而這題我用一維DP的解，但是跟上一題「開心的金明」不一樣，一維DP的 j 軸不需要反向迭代，原因是同一種硬幣可以重複取用。令status[j]為價格為j時的最小硬幣數量。</p>
+    <p>—幣值(coin)大於所需價格(j)，不需做更動</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass</p>
+    <p>—幣值小於等於所需價格，以status[j-coin]為基礎加一個硬幣做比較</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;status[j] = min(status[j],status[j-coin]+1)</p>
+    <p>最後答案為status[C]</p>
+
+
     <script src="https://gist.github.com/jeremy960110/a3e0db2cfae6a6a59ba12ea253e179ef.js"></script>
     <img src="./換零錢.jpg">
     

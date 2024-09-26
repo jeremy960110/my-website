@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="./datafrom.css">
 </head>
 <body>
+    <h2>題解</h2>
+    <p>先照題目的輸入建立一個Map[0~最遠距離]，再把題目給的每一組頭跟尾地方在Map上加一跟減一(頭的地方加一，尾端減一)，接著用差分的方式去做(data[i]=diff[i]+data[i-1])，只要是大於一的地方就是有被覆蓋的，因此求出覆蓋長度。</p>
     <script src="https://gist.github.com/jeremy960110/c9061f7e2d29d78b4b3f663bc995fb01.js"></script>
     <img src="./線段覆蓋長度-差分.jpg">
     <a href="../index.html"><button id="s">回上ㄧ頁</button></a>

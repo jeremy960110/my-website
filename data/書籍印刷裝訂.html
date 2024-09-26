@@ -3,10 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./datafrom.css"> 
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+        }
+        .print {
+            background-color: #4a90e2; /* 藍色: 印刷時間 */
+        }
+        .binding {
+            background-color: #7ed321; /* 綠色: 裝訂時間 */
+        }
+    </style>
 </head>
 <body>
+    <h2>題解</h2>
+    <p>因為印刷是稀缺資源，而裝訂是無限的資源，無論先印誰，總印刷時間都不變，而裝訂時間長的則是越早印越好，長的先完成，才不會浪費，總不可能把裝訂時間長的放在最後面吧！而我們能不能把所有印刷時間加起來再加最小裝訂時間呢？答案是不行，因為有可能某個裝訂時間非常大，大到超過所有印刷時間加最小裝訂時間(如下圖)。</p>
+    
+    <table>
+        <tr>
+            <th></th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>10</th>
+
+        </tr>
+        <tr>
+            <th>Book1</th>
+            <td class="print"></td>
+            <td class="print"></td>
+            <td class="binding"></td>
+            <td class="binding"></td>
+            <td class="binding"></td>
+            <td class="binding"></td>
+            <td class="binding"></td>
+            <td class="binding"></td>
+            <td class="binding"></td>
+            <td></td>
+            
+        </tr>
+        <tr>
+            <th>Book2</th>
+            <td></td>
+            <td></td>
+            <td class="print"></td>
+            <td class="print"></td>
+            <td class="binding"></td>
+            <td class="binding"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>Book3</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="print"></td>
+            <td class="print"></td>
+            <td class="print"></td>
+            <td class="binding"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <p style="color: #4a90e2;">藍色：印刷時間</p>
+    <p style="color: #7ed321;">綠色：裝訂時間</p>
+
     <script src="https://gist.github.com/jeremy960110/71c894cccaa281002a2f401af4b67b1c.js"></script>
-    <img src="./書籍印刷裝訂.jpg">
-    <a href="../index.html"><button id="s">回上ㄧ頁</button></a>
+    <img src="./書籍印刷裝訂.jpg" alt="書籍印刷裝訂圖">
+    <a href="../index.html"><button id="s">回上一頁</button></a>
 </body>
 </html>
+
+
+
+
+
+

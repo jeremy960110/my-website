@@ -3,8 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./datafrom.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+    <h2>題解</h2>
+    <p>這是標準的LIS題型，而且是嚴格遞增，我們都會做，但如何找出最後出現的呢？答案一定是增加長度的前面一個，如下圖：</p>
+    <table>
+        <tr>
+            <th>i</th>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <th>data</th>
+            <td>1</td>
+            <td>4</td>
+            <td>2</td>
+            <td>5</td>
+            <td>3</td>
+            <td>7</td>
+            <td>4</td>
+            <td>9</td>
+            <td>2</td>
+            <td>5</td>
+
+        </tr>
+        <tr>
+            <th>LISlen</th>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>3</td>
+            <td>3</td>
+            <td>4</td>
+            <td>4</td>
+            <td>5</td>
+            <td>2</td>
+            <td>5</td>
+
+
+        </tr>
+    </table>
+    <p>從LISlen裡最大的LISlen[9]往後找，比它(5)小一個長度的第一個是LISlen[6]，再接著往後找，是LISlen[4]，以此類推，直到找到值為1的。最後總共會找到data[9],data[6],data[4],data[2],data[0]，也就是[5,4,3,2,1]，最後再反轉就好了。</p>
     <script src="https://gist.github.com/jeremy960110/11b9afc08f4722a1f6399eed4713bdce.js"></script>
     <img src="./What Goes Up.jpg">
     <a href="../index.html"><button id="s">回上ㄧ頁</button></a>

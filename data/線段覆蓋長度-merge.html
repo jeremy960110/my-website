@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="./datafrom.css">
 </head>
 <body>
+    <h2>題解</h2>
+    <p>先把線段做sort(先頭再尾)，從第一個開始合併，如果可以合併就把範圍擴大至此線段的尾端，不行就先把之前長度計入答案中，然後將當前線段作為新線段做後續的合併</p>
     <script src="https://gist.github.com/jeremy960110/f310d00feda39e3ae34b82f3eff24562.js"></script>
     <img src="./線段覆蓋長度-merge.jpg">
     <a href="../index.html"><button id="s">回上ㄧ頁</button></a>

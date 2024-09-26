@@ -3,8 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./datafrom.css"> 
+    <style>
+        table {
+            border-collapse: collapse;
+            width: auto;
+        }
+        td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+        /* 為 (3~6)*(3~6) 區域的儲存格設置邊框 */
+        tr:nth-child(n+3) td:nth-child(n+3) {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
+    <h2>題解</h2>
+    <p>如果可能性只有一種，那就是LCS的標準做法。</p>
+    <p>—若data1[i-1]==data2[j-1]，status[i][j]=status[i-1][j-1]+1</p>
+    <p>—若data1[i-1] != data2[j-1]，status[i][j]=max(status[i-1][j],status[i][j-1]) </p>
+    <p>—>status[len(data1)][len(data2)]即為LCS長度。</p>
+    <p>但是題目要求是「以第一個序列靠左字母先出現的解」，所以要先紀錄status[i][j]的值是從哪個方向來的，例如左=1，上=2，左上=3，這時就要建立一個名為path的list去紀錄，之後再由path[-1][-1]依照方向往回推。</p>
+    <table>
+        <!-- 創建 6x6 空白表格 -->
+        <tr>
+            <td>status</td>
+            <td>j</td>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>i</td>
+            <td> </td>
+            <td>data2</td>
+            <td>B</td>
+            <td>A</td>
+            <td>C</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>data1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>A</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>B</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>C</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+    </table>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <table>
+        <!-- 創建 6x6 空白表格 -->
+        <tr>
+            <td>path</td>
+            <td>j</td>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>i</td>
+            <td> </td>
+            <td>data2</td>
+            <td>B</td>
+            <td>A</td>
+            <td>C</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>data1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>A</td>
+            <td>0</td>
+            <td>2</td>
+            <td><b style="color: brown;">3</b></td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>B</td>
+            <td>0</td>
+            <td><b style="color: brown;">3</b></td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>C</td>
+            <td>0</td>
+            <td>2</td>
+            <td>2</td>
+            <td><b style="color: brown;">3</b></td>
+        </tr>
+    </table>
+    <p>建表之後就會發現，如果path[i][j]=3，則data1[i-1]=data2[j-1]，意思是有可能是答案要求的LCS，但是要怎麽知道答案要求的是哪一個？在建path時，如果path[i][j]左跟上的值都一樣，那就優先選上，因為這樣會用接近data1的左邊，才能滿足「以第一個序列靠左字母先出現的解」的需求。</p>
+
     <script src="https://gist.github.com/jeremy960110/a788e46a113b74a18f648ef09e2d80d3.js"></script>
     <img src="./基因序列密碼問題.jpg">
     <a href="../index.html"><button id="s">回上ㄧ頁</button></a>

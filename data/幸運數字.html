@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="./datafrom.css"> 
 </head>
 <body>
+    <h2>題解</h2>
+    <p>先把轉成前綴和的形式，而為了之後能快速找到最小值，需要把data的index和value,照value由大到小排序。從尾巴看,就是目前最小值,但不一定在想要的區間(L-R)內，所以只要一直pop,即可找到當前(L-R)範圍內的最小值，再用前綴和求出左邊界跟右邊界的大小，即可找到下一個區間。</p>
     <script src="https://gist.github.com/jeremy960110/549f79038691df186c993e948ecd981f.js"></script>
     <img src="./幸運數字.jpg">
     <a href="../index.html">

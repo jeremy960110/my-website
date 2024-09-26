@@ -5,6 +5,11 @@
     <link rel="stylesheet" href="./datafrom.css"> 
 </head>
 <body>
+    <h2>題解</h2>
+    <p>根據題目敘述，最小值必定為0，所以先宣告一個名為M的list，負責紀錄到該點所有可能中最大值，既然是最大值，就一定是用max()函式了，而這樣也可以確保答案一定可以大於等於0。接下來就可以很直觀到寫出</p>
+    <p>1.M[i-1]>=0的情況，M[i] = M[i-1]+data[i]</p>
+    <p>2.M[i-1]&lt;0的情況，M[i] = 0(負數只會對後面的數字造成負擔)</p>
+    <p>狀態轉移方程式：M[i] = max(M[i],M[i-1]+data[i])</p>
     <script src="https://gist.github.com/jeremy960110/08e3fa41b9773e4341b60c22100c2dc8.js"></script>
     <img src="./採蘑菇攻略問題.jpg">
     <a href="../index.html"><button id="s">回上ㄧ頁</button></a>

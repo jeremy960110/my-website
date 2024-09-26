@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="./datafrom.css">
 </head>
 <body>
+    <h2>題解</h2>
+    <p>一維DP的解法，那就是以 j 軸為價格，status[j]代表價格為j時的開心度(價格與重要度的乘積)總和，而因為status[j] = max(stasts[j],status[j-p]+p*imp)是由前面為基礎做加法，所以for j in range()時必須反向迭代以防止影響前面的值，換句話說就是避免重複拿到同一個東西。</p>
     <script src="https://gist.github.com/jeremy960110/b27f1a251de5d5320519ef3c6000b748.js"></script>
     <img src="./開心的金明(一維).jpg">
     <a href="../index.html"><button id="s">回上ㄧ頁</button></a>
